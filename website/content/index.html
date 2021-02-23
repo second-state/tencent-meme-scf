@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Meme Generator</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./env.js"></script>
+
+    <script>
+function callService() {
+  setTimeout(function(){
+    $('#process').prop('disabled', true);
+  },0);
+
+  var memes = [];
+  memes[0] = {};
+  memes[0].text = $('#red-girl-says').val();
+  memes[0].left = parseInt($('#red-girl-left').val());
+  memes[0].top = parseInt($('#red-girl-top').val());
+  memes[0].font_size = parseInt($('#red-girl-font').val());
+  memes[1] = {};
+  memes[1].text = $('#blue-girl-says').val();
+  memes[1].left = parseInt($('#blue-girl-left').val());
+  memes[1].top = parseInt($('#blue-girl-top').val());
+  memes[1].font_size = parseInt($('#blue-girl-font').val());
+  memes[2] = {};
+  memes[2].text = $('#guy-says').val();
+  memes[2].left = parseInt($('#guy-left').val());
+  memes[2].top = parseInt($('#guy-top').val());
+  memes[2].font_size = parseInt($('#guy-font').val());
+  console.log(JSON.stringify(memes));
+
+  $.ajax({
+      url: window.env.API_URL,
+      type: "post",
+      data : JSON.stringify(memes),
+      dataType: "text",
+      success: function (data) {
+        const img_url = "data:image/png;base64," + data;
+        $('#wm_img').prop('src', img_url);
+        $('#process').prop('disabled', false);
+      },
+      error: function(jqXHR, exception){
+        console.log("Error Status: " + jqXHR.statusText);
+	console.log("Error Resp: " + jqXHR.responseText);
+	console.log("Exception: " + exception);
+        alert("Cannot get data");
+        $('#process').prop('disabled', false);
+      }
+  });
+
+  return false;
+}
+    </script>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div style="text-align:center;margin:25px">
+        <a href="https://www.secondstate.io/"><img style="border:0;" src="https://www.secondstate.io/assets/img/logo.png"></a>
+        <div style="font-size:90%;color:gray;margin:20px"><a href="https://www.secondstate.io/faas/">Fast, safe, portable and serverless Rust functions as services</a></div>
+      </div>
+
+      <h1>Meme Generator</h1>
+
+      <form>
+        <div class="form-row">
+          <div class="col">Says</div>
+	  <div class="col">Top</div>
+	  <div class="col">Left</div>
+	  <div class="col">Font size</div>
+        </div>
+
+        <div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control" id="red-girl-says" value="Serverless" placeholder="Red girl">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="red-girl-top" value="340">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="red-girl-left" value="100">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="red-girl-font" value="70">
+          </div>
+        </div>
+
+	<div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control" id="blue-girl-says" value="My server(s)" placeholder="Blue girl">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="blue-girl-top" value="100">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="blue-girl-left" value="490">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="blue-girl-font" value="50">
+          </div>
+        </div>
+
+	<div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control" id="guy-says" value="Me" placeholder="Me">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="guy-top" value="220">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="guy-left" value="450">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="guy-font" value="100">
+          </div>
+        </div>
+
+	<div class="form-row">
+          <div class="col">
+            <button class="btn btn-primary mb-2" id="process" name="process" onclick="return callService();">Generate</button>
+	  </div>
+	</div>
+      </form>
+      
+      <div class="jumbotron">
+        <img id="wm_img" src="bg.png" class="img-fluid rounded"/>
+      </div>
+
+    </div> <!-- /container -->
+  </body>
+</html>
