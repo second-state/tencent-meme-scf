@@ -40,16 +40,10 @@ fn _watermark(w: Watermark, img: &mut image::DynamicImage) {
   let font = Font::try_from_vec(font).unwrap();
 
   let scale = Scale {
-    x: font_size + 1.0,
-    y: font_size + 1.0,
-  };
-  drawing::draw_text_mut(img, image::Rgba([0, 0, 0, 255u8]), w.left - 2, w.top - 2, scale, &font, &w.text);
-
-  let scale = Scale {
     x: font_size,
     y: font_size,
   };
-  drawing::draw_text_mut(img, image::Rgba([255u8, 255u8, 255u8, 255u8]), w.left, w.top, scale, &font, &w.text);
+  drawing::draw_text_mut(img, image::Rgba([0u8, 0u8, 0u8, 255u8]), w.left, w.top, scale, &font, &w.text);
 }
 
 

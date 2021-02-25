@@ -1,5 +1,5 @@
 org: secondstate
-app: meme-template
+app: meme-drake
 stage: prod
 
 component: scf

@@ -1,4 +1,4 @@
-[中文](README.md) | [Live demo!](https://sls-website-ap-hongkong-oyxy1ei-1302315972.cos-website.ap-hongkong.myqcloud.com/)
+[中文](README.md) | [Live demo!](https://sls-website-ap-hongkong-hmtn9c-1302315972.cos-website.ap-hongkong.myqcloud.com/)
 
 # Quick start
 

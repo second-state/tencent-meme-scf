@@ -1,4 +1,4 @@
-[English](README-en.md) | [Live demo!](https://sls-website-ap-hongkong-5auaicp-1302315972.cos-website.ap-hongkong.myqcloud.com/)
+[English](README-en.md) | [Live demo!](https://sls-website-ap-hongkong-hmtn9c-1302315972.cos-website.ap-hongkong.myqcloud.com/)
 
 # 快速开始
 

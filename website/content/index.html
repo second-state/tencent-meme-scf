@@ -19,20 +19,15 @@ function callService() {
 
   var memes = [];
   memes[0] = {};
-  memes[0].text = $('#red-girl-says').val();
-  memes[0].left = parseInt($('#red-girl-left').val());
-  memes[0].top = parseInt($('#red-girl-top').val());
-  memes[0].font_size = parseInt($('#red-girl-font').val());
+  memes[0].text = $('#top-says').val();
+  memes[0].left = parseInt($('#top-left').val());
+  memes[0].top = parseInt($('#top-top').val());
+  memes[0].font_size = parseInt($('#top-font').val());
   memes[1] = {};
-  memes[1].text = $('#blue-girl-says').val();
-  memes[1].left = parseInt($('#blue-girl-left').val());
-  memes[1].top = parseInt($('#blue-girl-top').val());
-  memes[1].font_size = parseInt($('#blue-girl-font').val());
-  memes[2] = {};
-  memes[2].text = $('#guy-says').val();
-  memes[2].left = parseInt($('#guy-left').val());
-  memes[2].top = parseInt($('#guy-top').val());
-  memes[2].font_size = parseInt($('#guy-font').val());
+  memes[1].text = $('#bottom-says').val();
+  memes[1].left = parseInt($('#bottom-left').val());
+  memes[1].top = parseInt($('#bottom-top').val());
+  memes[1].font_size = parseInt($('#bottom-font').val());
   console.log(JSON.stringify(memes));
 
   $.ajax({
@@ -78,46 +73,31 @@ function callService() {
 
         <div class="form-row">
           <div class="col">
-            <input type="text" class="form-control" id="red-girl-says" value="Serverless" placeholder="Red girl">
+            <input type="text" class="form-control" id="top-says" value="Manage servers" placeholder="Top panel">
           </div>
           <div class="col">
-            <input type="number" class="form-control" id="red-girl-top" value="340">
+            <input type="number" class="form-control" id="top-top" value="100">
           </div>
           <div class="col">
-            <input type="number" class="form-control" id="red-girl-left" value="100">
+            <input type="number" class="form-control" id="top-left" value="300">
           </div>
           <div class="col">
-            <input type="number" class="form-control" id="red-girl-font" value="70">
-          </div>
-        </div>
-
-	<div class="form-row">
-          <div class="col">
-            <input type="text" class="form-control" id="blue-girl-says" value="My server(s)" placeholder="Blue girl">
-          </div>
-          <div class="col">
-            <input type="number" class="form-control" id="blue-girl-top" value="100">
-          </div>
-          <div class="col">
-            <input type="number" class="form-control" id="blue-girl-left" value="490">
-          </div>
-          <div class="col">
-            <input type="number" class="form-control" id="blue-girl-font" value="50">
+            <input type="number" class="form-control" id="top-font" value="70">
           </div>
         </div>
 
 	<div class="form-row">
           <div class="col">
-            <input type="text" class="form-control" id="guy-says" value="Me" placeholder="Me">
+            <input type="text" class="form-control" id="bottom-says" value="Serverless" placeholder="Bottom panel">
           </div>
           <div class="col">
-            <input type="number" class="form-control" id="guy-top" value="220">
+            <input type="number" class="form-control" id="bottom-top" value="330">
           </div>
           <div class="col">
-            <input type="number" class="form-control" id="guy-left" value="450">
+            <input type="number" class="form-control" id="bottom-left" value="330">
           </div>
           <div class="col">
-            <input type="number" class="form-control" id="guy-font" value="100">
+            <input type="number" class="form-control" id="bottom-font" value="90">
           </div>
         </div>
 
