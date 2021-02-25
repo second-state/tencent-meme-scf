@@ -1,4 +1,4 @@
-[中文](README.md) | [Screencast](https://youtu.be/Thoi7XrIKvE) | [Live demo!](https://sls-website-ap-beijing-7jlzqqj-1302315972.cos-website.ap-beijing.myqcloud.com/) | [Coding tutorial](https://www.secondstate.io/articles/tencent-tensorflow/)
+[中文](README.md) | [Live demo!](https://sls-website-ap-hongkong-oyxy1ei-1302315972.cos-website.ap-hongkong.myqcloud.com/)
 
 # Quick start
 
@@ -63,3 +63,9 @@ $ sls deploy
 ```
 
 Load the deployed URL in any web browser and have fun!
+
+## More memes
+
+Check out different branches from this repo to see more memes. If you have a good meme photo, please send us a pull request. :)
+
+
