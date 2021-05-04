@@ -13,7 +13,7 @@ $ docker run --rm -it -v $(pwd):/app secondstate/tencent-tensorflow-scf
 (docker) $
 ```
 
-> You do not have to use our Docker image. To build on your own computer or container, make sure that you have installed the [Serverless Framework](https://www.serverless.com/framework/docs/providers/tencent/guide/installation/), [Rust](https://www.rust-lang.org/tools/install), and [ssvmup](https://www.secondstate.io/articles/ssvmup/).
+> You do not have to use our Docker image. To build on your own computer or container, make sure that you have installed the [Serverless Framework](https://www.serverless.com/framework/docs/providers/tencent/guide/installation/), [Rust](https://www.rust-lang.org/tools/install), and [rustwasmc](https://www.secondstate.io/articles/rustwasmc/).
 
 Run the following command inside the Docker container to build and deploy the entire application.
 
@@ -37,7 +37,7 @@ Fork this repo and use the `Code | Open with Codespaces` button to launch Github
 
 ## Low code development
 
-Once the Codespaaces IDE starts, you can make simple changes to the source code to customize it for your own applications.
+Once the Codespaces IDE starts, you can make simple changes to the source code to customize it for your own applications.
 
 * Make changes to the image processing logic in `src/main.rs` file. 
 * Make changes to the front end UI in the `website/content/index.html` file.
@@ -47,7 +47,7 @@ Once the Codespaaces IDE starts, you can make simple changes to the source code 
 Open a `Terminal` windon in the Codespaces IDE, and run the following command to build your cloud function.
 
 ```
-$ ssvmup build --enable-aot
+$ rustwasmc build --enable-aot
 ```
 
 ## Deploy
