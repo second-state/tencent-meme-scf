@@ -13,7 +13,7 @@ $ docker run --rm -it -v $(pwd):/app secondstate/tencent-tensorflow-scf
 (docker) $
 ```
 
-> 你不一定要使用我们的 Docker image。要在您自己的计算机或容器上构建，请确保您已经安装了[Serverless 框架](https://www.serverless.com/framework/docs/providers/tencent/guide/installation/), [Rust](https://www.rust-lang.org/tools/install), 和[ssvmup](https://www.secondstate.io/articles/ssvmup/).
+> 你不一定要使用我们的 Docker image。要在您自己的计算机或容器上构建，请确保您已经安装了[Serverless 框架](https://www.serverless.com/framework/docs/providers/tencent/guide/installation/), [Rust](https://www.rust-lang.org/tools/install), 和[rustwasmc](https://www.secondstate.io/articles/rustwasmc/).
 
 在 Docker 容器中运行以下命令，以构建和部署整个应用程序。
 
@@ -47,7 +47,7 @@ Fork 这个 repo，使用 `Code | Open with Codespaces` 按钮来在浏览器中
 在 Codespaces 打开 `Terminal` 窗口, 然后运行下面的命令行来创建云函数。
 
 ```
-$ ssvmup build --enable-aot
+$ rustwasmc build --enable-aot
 ```
 
 ## 部署
